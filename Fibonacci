@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+int fiboArray[100]={0};
+
+fiboArray[0]=1;
+fiboArray[1]=2;
+
+int n=1;
+int result=0;
+
+while(result<1000){
+  result = fiboArray[n]+fiboArray[n-1];
+  n++;
+  fiboArray[n]=result;
+};
+
+
+
+int sum=0;
+
+for(int i=0; i<(sizeof(fiboArray)/sizeof(fiboArray[0]));i++){
+  if(fiboArray[i]!=0){
+  cout<<fiboArray[i]<<" ";
+  }
+
+  if(fiboArray[i]!=0 && fiboArray[i]<1000 && fiboArray[i]%2==0){
+    sum = sum + fiboArray[i];
+  }
+}
+
+cout<<"\nThe Sum of Even Variables is: "<<sum<<endl;
+
+return 0;
+}
